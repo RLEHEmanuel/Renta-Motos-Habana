@@ -20,14 +20,17 @@ export default function Header({ onContactClick }) {
     <header className="bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-2xl fixed top-0 left-0 right-0 z-50">
       <nav className="container mx-auto px-6 py-5 flex justify-between items-center">
         <div className="text-3xl font-black tracking-widest hover:scale-110 transition duration-500 cursor-pointer">
-          <span className="wave-char wave-char-1">H</span>
-          <span className="wave-char wave-char-2">A</span>
-          <span className="wave-char wave-char-3">V</span>
-          <span className="wave-char wave-char-4">A</span>
-          <span className="wave-char wave-char-5">N</span>
-          <span className="wave-char wave-char-6">A</span>
-          <span className="text-yellow-400 wave-char wave-char-7">C</span>
-          <span className="text-yellow-400 wave-char wave-char-8">C</span>
+          <span className="text-yellow-400 wave-char wave-char-1">E</span>
+          <span className="wave-char wave-char-2">-</span>
+          <span className="wave-char wave-char-3">M</span>
+          <span className="wave-char wave-char-4">O</span>
+          <span className="wave-char wave-char-5">T</span>
+          <span className="wave-char wave-char-6">O</span>
+          <span className="wave-char wave-char-7">R</span>
+          <span className="wave-char wave-char-8">E</span>
+          <span className="wave-char wave-char-9"> </span>
+          <span className="wave-char wave-char-10">N</span>
+          <span className="wave-char wave-char-11">T</span>
         </div>
 
         {/* Botón Menu - Hamburger Icon Mejorado */}
@@ -80,11 +83,11 @@ export default function Header({ onContactClick }) {
               </li>
 <li>
                 <a
-                  href="#contacto"
+                  href="#contáctenos"
                   onClick={handleContactClick}
                   className="hover:text-yellow-400 transition duration-300 ease-in-out font-semibold"
                 >
-                  Contacto
+                  Contáctenos
                 </a>
               </li>
             </ul>
