@@ -13,10 +13,10 @@ export default function Contact({ isOpen, onClose }) {
           ×
         </button>
 
-        <h2 className="text-4xl font-black text-center mb-2 animate-fade-in-up text-white">
+        <h2 className="text-4xl font-bold text-center mb-2 animate-fade-in-up text-white font-sans">
           ¿Listo para Comenzar?
         </h2>
-        <p className="text-center text-yellow-400 mb-8 text-lg font-semibold animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <p className="text-center text-yellow-400 mb-8 text-lg font-semibold animate-fade-in-up font-sans" style={{ animationDelay: '0.1s' }}>
           Déjanos tus datos y nos contactaremos pronto
         </p>
         <form className="space-y-5 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -42,7 +42,7 @@ export default function Contact({ isOpen, onClose }) {
             />
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 py-3 rounded-lg hover:from-yellow-300 hover:to-yellow-200 transition duration-300 font-bold text-lg shadow-lg transform hover:scale-105"
+              className="w-full bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 py-3 rounded-lg hover:from-yellow-300 hover:to-yellow-200 transition duration-300 font-bold text-lg shadow-lg transform hover:scale-105 font-sans"
             >
               Enviar Solicitud
             </button>

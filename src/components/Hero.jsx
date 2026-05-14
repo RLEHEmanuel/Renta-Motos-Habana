@@ -28,10 +28,10 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h1 className="text-6xl font-black mb-6 leading-tight animate-fade-in-up">
+        <h1 className="text-6xl font-bold mb-6 leading-tight animate-fade-in-up font-sans">
           ¡Vive la Libertad sobre dos Ruedas!
         </h1>
-        <p className="text-2xl mb-10 text-yellow-200 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <p className="text-2xl mb-10 text-yellow-200 font-light animate-fade-in-up font-sans" style={{ animationDelay: '0.2s' }}>
           Explora La Habana con nuestras motos de a lo cubano
         </p>
         <button className="bg-yellow-400 text-blue-900 px-10 py-4 rounded-lg text-xl font-bold hover:bg-yellow-300 transition duration-300 transform hover:scale-105 shadow-lg animate-fade-in-up animate-pulse-glow" style={{ animationDelay: '0.4s' }}>

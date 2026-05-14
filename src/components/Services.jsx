@@ -23,10 +23,10 @@ export default function Services() {
   return (
     <section id="servicios" className="py-20 bg-gradient-to-br from-blue-50 to-gray-100">
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl font-black text-center mb-4 text-blue-900 animate-fade-in-up">
+        <h2 className="text-5xl font-bold text-center mb-4 text-blue-900 animate-fade-in-up font-sans">
           Servicios Premium
         </h2>
-        <p className="text-center text-gray-600 mb-16 text-lg animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <p className="text-center text-gray-600 mb-16 text-lg animate-fade-in-up font-sans" style={{ animationDelay: '0.1s' }}>
           Disfrutarás de la mejor experiencia
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,10 +37,10 @@ export default function Services() {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="text-6xl mb-4 animate-float">{servicio.icon}</div>
-              <h3 className="text-2xl font-bold mb-3 text-blue-900">
+              <h3 className="text-2xl font-bold mb-3 text-blue-900 font-sans">
                 {servicio.titulo}
               </h3>
-              <p className="text-gray-600 text-lg">{servicio.descripcion}</p>
+              <p className="text-gray-600 text-lg font-sans">{servicio.descripcion}</p>
             </div>
           ))}
         </div>
