@@ -144,6 +144,18 @@ body {
   52% { transform: translateY(0); }
 }
 
+@keyframes wave-char-11 {
+  0%, 100% { transform: translateY(0); }
+  48% { transform: translateY(-15px); }
+  56% { transform: translateY(0); }
+}
+
+@keyframes wave-char-12 {
+  0%, 100% { transform: translateY(0); }
+  52% { transform: translateY(-15px); }
+  60% { transform: translateY(0); }
+}
+
 @keyframes particle-random-1 {
   0% {
     transform: translate(0, 0) scale(1);
@@ -298,41 +310,34 @@ body {
   }
 }
 
+
+/* Per-character entrance + continuous wave
+   Each character runs a short entrance animation with a staggered delay,
+   then continues the wave animation in loop. */
 .wave-char {
   display: inline-block;
+  opacity: 0; /* start hidden so charIn brings them in */
+  transform: translateY(8px);
 }
 
-.wave-char-1 {
-  animation: wave-char-1 7s ease-in-out infinite;
+@keyframes charIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.wave-char-2 {
-  animation: wave-char-2 7s ease-in-out infinite;
-}
-
-.wave-char-3 {
-  animation: wave-char-3 7s ease-in-out infinite;
-}
-
-.wave-char-4 {
-  animation: wave-char-4 7s ease-in-out infinite;
-}
-
-.wave-char-5 {
-  animation: wave-char-5 7s ease-in-out infinite;
-}
-
-.wave-char-6 {
-  animation: wave-char-6 7s ease-in-out infinite;
-}
-
-.wave-char-7 {
-  animation: wave-char-7 7s ease-in-out infinite;
-}
-
-.wave-char-8 {
-  animation: wave-char-8 7s ease-in-out infinite;
-}
+/* Combined: charIn (one-shot, forwards) then wave-loop */
+.wave-char-1  { animation: charIn 0.45s ease 0s forwards,  wave-char-1 7s ease-in-out 0s infinite; }
+.wave-char-2  { animation: charIn 0.45s ease 0.06s forwards, wave-char-2 7s ease-in-out 0s infinite; }
+.wave-char-3  { animation: charIn 0.45s ease 0.12s forwards, wave-char-3 7s ease-in-out 0s infinite; }
+.wave-char-4  { animation: charIn 0.45s ease 0.18s forwards, wave-char-4 7s ease-in-out 0s infinite; }
+.wave-char-5  { animation: charIn 0.45s ease 0.24s forwards, wave-char-5 7s ease-in-out 0s infinite; }
+.wave-char-6  { animation: charIn 0.45s ease 0.30s forwards, wave-char-6 7s ease-in-out 0s infinite; }
+.wave-char-7  { animation: charIn 0.45s ease 0.36s forwards, wave-char-7 7s ease-in-out 0s infinite; }
+.wave-char-8  { animation: charIn 0.45s ease 0.42s forwards, wave-char-8 7s ease-in-out 0s infinite; }
+.wave-char-9  { animation: charIn 0.45s ease 0.48s forwards, wave-char-9 7s ease-in-out 0s infinite; }
+.wave-char-10 { animation: charIn 0.45s ease 0.54s forwards, wave-char-10 7s ease-in-out 0s infinite; }
+.wave-char-11 { animation: charIn 0.45s ease 0.60s forwards, wave-char-11 7s ease-in-out 0s infinite; }
+.wave-char-12 { animation: charIn 0.45s ease 0.66s forwards, wave-char-12 7s ease-in-out 0s infinite; }
 
 .particle-random-1 { animation: particle-random-1 2.5s ease-out infinite; }
 .particle-random-2 { animation: particle-random-2 2.7s ease-out infinite 0.15s; }
@@ -402,7 +407,8 @@ body {
 
 .dropdown-menu-professional ul li a {
   display: block;
-  padding: 14px 20px;
+  width: 100%;
+  padding: 12px 20px;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -412,8 +418,31 @@ body {
   border-bottom: 2px solid transparent;
 }
 
+.dropdown-menu-professional ul li button,
+.dropdown-menu-professional ul li a {
+  text-align: left;
+  display: block;
+}
+
 .dropdown-menu-professional ul li a:hover {
   animation: slideUnderline 0.4s ease-in-out forwards;
+  color: #fbbf24;
+  padding-left: 24px;
+}
+
+/* Ensure buttons inside dropdown match link styling and are full width */
+.dropdown-menu-professional ul li button {
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dropdown-menu-professional ul li button:hover {
   color: #fbbf24;
   padding-left: 24px;
 }
@@ -421,20 +450,23 @@ body {
 /* Menú desplegable profesional */
 .dropdown-menu-professional {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.25rem);
   right: 0;
-  background: rgba(17, 24, 39, 0.4);
+  display: block;
+  background: rgba(17, 24, 39, 0.5);
   border-radius: 0 0 12px 12px;
   padding: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: none;
   animation: slideDownMenu 0.25s ease-out;
-  z-index: 40;
+  z-index: 70;
   min-width: 200px;
   overflow: hidden;
   margin-top: 0;
+  transform-origin: top right;
 }
 
 @keyframes slideDownMenu {
@@ -495,7 +527,8 @@ body {
 
 .dropdown-menu-professional ul li a {
   display: block;
-  padding: 14px 20px;
+  width: 100%;
+  padding: 12px 20px;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.3px;

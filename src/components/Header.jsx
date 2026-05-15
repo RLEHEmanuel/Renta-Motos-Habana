@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import MotosModal from './MotosModal';
+import LoginModal from './LoginModal';
 
 export default function Header({ onContactClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [motosModalOpen, setMotosModalOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -80,15 +82,14 @@ export default function Header({ onContactClick }) {
                 </a>
               </li>
               <li>
-                <a
-                  href="#servicios"
-                  onClick={closeMenu}
-                  className="hover:text-yellow-400 transition duration-300 ease-in-out font-semibold font-sans"
+                <button
+                  onClick={() => { closeMenu(); setLoginModalOpen(true); }}
+                  className="w-full text-left hover:text-yellow-400 transition duration-300 ease-in-out font-semibold font-sans"
                 >
-                  Servicios
-                </a>
+                  Iniciar sesión
+                </button>
               </li>
-<li>
+              <li>
                 <a
                   href="#contáctenos"
                   onClick={handleContactClick}
@@ -102,6 +103,7 @@ export default function Header({ onContactClick }) {
         )}
       </nav>
       <MotosModal isOpen={motosModalOpen} onClose={() => setMotosModalOpen(false)} />
+      <LoginModal isOpen={loginModalOpen} onClose={() => setLoginModalOpen(false)} />
     </header>
   )
 }

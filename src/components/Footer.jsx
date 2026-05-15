@@ -13,7 +13,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 text-yellow-400 font-sans">Enlaces</h3>
             <ul className="space-y-2 text-gray-400 font-sans">
               <li><a href="#motos" className="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Motos</a></li>
-              <li><a href="#servicios" className="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Servicios</a></li>
+              
               <li><a href="#contacto" className="hover:text-yellow-400 transition hover:translate-x-1 inline-block">Contacto</a></li>
             </ul>
           </div>
